@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 
 public class CarControll : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class CarControll : MonoBehaviour
     void Start()
     {
         
-        car.GetComponent<MonoBehaviour>().enabled = true;
-        AICar01.GetComponent<MonoBehaviour>().enabled = true;
+        car.GetComponent<CarController>().enabled = true;
+        AICar01.GetComponent<CarController>().enabled = true;
     }
 
   }

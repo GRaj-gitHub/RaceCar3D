@@ -7,7 +7,7 @@ public class CameraControll : MonoBehaviour
     [SerializeField]
     private GameObject[] Camera = new GameObject[3];
 
-    int cameraCount;
+    public static int cameraCount = 1;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.C))

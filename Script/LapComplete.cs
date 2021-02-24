@@ -10,32 +10,34 @@ public class LapComplete : MonoBehaviour
     [SerializeField]
     private GameObject middle_check;
 
-    public GameObject laptimeBox;
+   
 
     public GameObject milliDisp;
     public GameObject minDisp;
     public GameObject secDisp;
 
-    public GameObject lapCountDisp;
+   
+
+    public GameObject RacefiinshTrigger;
+
+    public GameObject lapCountDisp;  //disable the laptime just to show best
+
+    
     [SerializeField]
     private int total_laps;
 
-    int lapCount;
+    public static int lapCount;
 
-
-    private void Update()
-    {
-        if (lapCount == total_laps)
-        {
-            Debug.Log("race finished!!");
-        }
-    }
+   
+    
+   
     private void OnTriggerEnter(Collider player)
     {
        
         if (player.tag == "Player")
         {
-          
+           
+
             if (LapManager.minute < PlayerPrefs.GetInt("Best_min"))
             {
                 milliDisp.GetComponent<Text>().text = LapManager.milliDisplay + "";
@@ -75,9 +77,22 @@ public class LapComplete : MonoBehaviour
             lapCount++;
             lapCountDisp.GetComponent<Text>().text = lapCount + "";
 
+            if (lapCount == total_laps)
+            {
+                
+                RacefiinshTrigger.SetActive(true);
+                
+            }
+
             last_check.SetActive(false);
             middle_check.SetActive(true);
+
+           
         }
        
     }
+
+   
+        
+       
 }

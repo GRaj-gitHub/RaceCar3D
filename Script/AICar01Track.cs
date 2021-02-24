@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityStandardAssets.Vehicles.Car;
 public class AICar01Track : MonoBehaviour
 {
     public GameObject tracker;
